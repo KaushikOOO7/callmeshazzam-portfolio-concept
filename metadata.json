@@ -1,0 +1,8 @@
+{
+  "name": "SHAZZAM — The Creator Experience",
+  "description": "Premium animated technology creator portfolio for Shaz Mohamed (CallMeShazzam), featuring editorial typography, filtered tech reviews, and cinematic motion design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
