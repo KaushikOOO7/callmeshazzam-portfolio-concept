@@ -36,7 +36,7 @@ export const AboutSection: React.FC = () => {
                   className="w-full h-full object-cover filter contrast-105 group-hover:scale-105 transition-transform duration-700 ease-out will-change-transform"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src =
-                      'https://www.callmeshazzam.com/shazzam.jpg';
+                      '/images/creator/shaz-portrait-02.jpg';
                   }}
                 />
               </div>

@@ -11,7 +11,7 @@
   --color-card-bg: #151515;
   --color-primary-text: #F4F1E9;
   --color-secondary-text: #A5A5A0;
-  --color-accent: #D7FF4F;
+  --color-accent: #D7FF00;
   --color-muted-border: #303030;
 }
 
@@ -71,5 +71,5 @@
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D7FF4F;
+  background: #D7FF00;
 }

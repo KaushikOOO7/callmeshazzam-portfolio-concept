@@ -18,7 +18,7 @@ export const FeaturedVideoSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] text-[#D7FF4F] uppercase mb-2.5">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] text-[#D7FF00] uppercase mb-2.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>FEATURED SPOTLIGHT // 03</span>
             </div>
@@ -33,22 +33,22 @@ export const FeaturedVideoSection: React.FC = () => {
         </div>
 
         {/* Cinematic Wide Showcase Frame with Guaranteed Immediate Visibility */}
-        <div className="relative bg-[#171717] border border-[#303030] hover:border-[#D7FF4F]/80 transition-colors duration-500 overflow-hidden group shadow-2xl">
+        <div className="relative bg-[#171717] border border-[#303030] hover:border-[#D7FF00]/80 transition-colors duration-500 overflow-hidden group shadow-2xl">
           {/* Top Metadata Strip */}
           <div className="px-6 py-3 bg-[#101010] border-b border-[#303030] flex flex-wrap items-center justify-between text-xs font-mono text-[#A5A5A0]">
             <div className="flex items-center gap-4">
-              <span className="text-[#D7FF4F] font-semibold tracking-wider">
+              <span className="text-[#D7FF00] font-semibold tracking-wider">
                 PRIMARY EPISODE
               </span>
               <span>//</span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-[#D7FF4F]" />
+                <Clock className="w-3.5 h-3.5 text-[#D7FF00]" />
                 {featuredItem.duration} RUNTIME
               </span>
             </div>
 
             <div className="flex items-center gap-3">
-              <span className="px-2 py-0.5 bg-[#171717] border border-[#303030] text-[#D7FF4F]">
+              <span className="px-2 py-0.5 bg-[#171717] border border-[#303030] text-[#D7FF00]">
                 4K MASTER
               </span>
             </div>
@@ -76,8 +76,8 @@ export const FeaturedVideoSection: React.FC = () => {
             {/* Center Animated Play Button with Pulse */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative flex items-center justify-center">
-                <div className="absolute w-24 h-24 rounded-full bg-[#D7FF4F]/25 animate-ping pointer-events-none" />
-                <div className="w-20 h-20 rounded-full bg-[#D7FF4F] text-[#101010] flex items-center justify-center shadow-[0_0_35px_rgba(215,255,79,0.5)] group-hover:scale-110 active:scale-95 transition-transform duration-300 cursor-pointer">
+                <div className="absolute w-24 h-24 rounded-full bg-[#D7FF00]/25 animate-ping pointer-events-none" />
+                <div className="w-20 h-20 rounded-full bg-[#D7FF00] text-[#101010] flex items-center justify-center shadow-[0_0_35px_rgba(215,255,0,0.5)] group-hover:scale-110 active:scale-95 transition-transform duration-300 cursor-pointer">
                   <Play className="w-8 h-8 fill-current ml-1" />
                 </div>
               </div>
@@ -85,7 +85,7 @@ export const FeaturedVideoSection: React.FC = () => {
 
             {/* Bottom Floating Title */}
             <div className="absolute bottom-6 left-6 right-6 hidden sm:block pointer-events-none">
-              <span className="inline-block px-3 py-1 bg-[#101010]/90 text-[#D7FF4F] font-mono text-xs uppercase tracking-wider mb-2 border border-[#303030]">
+              <span className="inline-block px-3 py-1 bg-[#101010]/90 text-[#D7FF00] font-mono text-xs uppercase tracking-wider mb-2 border border-[#303030]">
                 {featuredItem.category}
               </span>
               <h3 className="text-2xl lg:text-3xl font-display font-bold uppercase text-[#F4F1E9] tracking-tight max-w-3xl drop-shadow-md">
@@ -98,7 +98,7 @@ export const FeaturedVideoSection: React.FC = () => {
           <div className="p-6 sm:p-10 bg-[#171717] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <div className="sm:hidden">
-                <span className="inline-block px-2.5 py-1 bg-[#101010] text-[#D7FF4F] font-mono text-[11px] uppercase tracking-wider mb-2 border border-[#303030]">
+                <span className="inline-block px-2.5 py-1 bg-[#101010] text-[#D7FF00] font-mono text-[11px] uppercase tracking-wider mb-2 border border-[#303030]">
                   {featuredItem.category}
                 </span>
                 <h3 className="text-xl font-display font-bold uppercase text-[#F4F1E9]">

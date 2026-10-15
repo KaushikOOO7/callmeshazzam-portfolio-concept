@@ -20,14 +20,14 @@ export const Footer: React.FC = () => {
               <span className="font-display font-black text-2xl sm:text-3xl tracking-[0.2em] text-[#F4F1E9] uppercase">
                 {siteConfig.brandName}
               </span>
-              <span className="w-2 h-2 rounded-full bg-[#D7FF4F]" />
+              <span className="w-2 h-2 rounded-full bg-[#D7FF00]" />
             </div>
 
             <p className="text-sm text-[#A5A5A0] max-w-sm leading-relaxed">
               Technology, opinions, entertainment and a little sarcasm. An unfiltered lens on modern consumer hardware and creator culture.
             </p>
 
-            <div className="text-xs font-mono text-[#D7FF4F] tracking-wider uppercase pt-2">
+            <div className="text-xs font-mono text-[#D7FF00] tracking-wider uppercase pt-2">
               CALLMESHAZZAM // DIGITAL CREATOR
             </div>
           </div>
@@ -38,27 +38,27 @@ export const Footer: React.FC = () => {
               <div className="text-[#F4F1E9] font-bold mb-4">// NAVIGATION</div>
               <ul className="space-y-3">
                 <li>
-                  <a href="#home" className="hover:text-[#D7FF4F] transition-colors">
+                  <a href="#home" className="hover:text-[#D7FF00] transition-colors">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#about" className="hover:text-[#D7FF4F] transition-colors">
+                  <a href="#about" className="hover:text-[#D7FF00] transition-colors">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#content" className="hover:text-[#D7FF4F] transition-colors">
+                  <a href="#content" className="hover:text-[#D7FF00] transition-colors">
                     Content
                   </a>
                 </li>
                 <li>
-                  <a href="#featured" className="hover:text-[#D7FF4F] transition-colors">
+                  <a href="#featured" className="hover:text-[#D7FF00] transition-colors">
                     Featured
                   </a>
                 </li>
                 <li>
-                  <a href="#socials" className="hover:text-[#D7FF4F] transition-colors">
+                  <a href="#socials" className="hover:text-[#D7FF00] transition-colors">
                     Socials
                   </a>
                 </li>
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
                     href={siteConfig.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#D7FF4F] transition-colors flex items-center gap-1"
+                    className="hover:text-[#D7FF00] transition-colors flex items-center gap-1"
                   >
                     Instagram ↗
                   </a>
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
                     href={siteConfig.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#D7FF4F] transition-colors flex items-center gap-1"
+                    className="hover:text-[#D7FF00] transition-colors flex items-center gap-1"
                   >
                     Official Site ↗
                   </a>
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
                     href={siteConfig.youtubeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#D7FF4F] transition-colors flex items-center gap-1"
+                    className="hover:text-[#D7FF00] transition-colors flex items-center gap-1"
                   >
                     YouTube ↗
                   </a>
@@ -106,7 +106,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-3 flex flex-col justify-between items-start md:items-end">
             <button
               onClick={scrollToTop}
-              className="group flex items-center gap-3 px-4 py-3 bg-[#171717] border border-[#303030] hover:border-[#D7FF4F] hover:bg-[#D7FF4F] hover:text-[#101010] text-xs font-mono uppercase tracking-widest text-[#F4F1E9] transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7FF4F]"
+              className="group flex items-center gap-3 px-4 py-3 bg-[#171717] border border-[#303030] hover:border-[#D7FF00] hover:bg-[#D7FF00] hover:text-[#101010] text-xs font-mono uppercase tracking-widest text-[#F4F1E9] transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7FF00]"
               aria-label="Back to top of page"
             >
               <span>BACK TO TOP</span>

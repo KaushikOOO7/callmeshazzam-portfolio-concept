@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { Sparkles, Terminal, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
 export const StatementSection: React.FC = () => {
@@ -25,12 +25,13 @@ export const StatementSection: React.FC = () => {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="py-14 sm:py-20 bg-[#101010] border-t border-[#303030] relative overflow-hidden select-none"
+      aria-label="Editorial manifesto and creator philosophy"
+      className="py-14 sm:py-18 bg-[#101010] border-t border-[#303030] relative overflow-hidden select-none"
     >
       {/* Background radial accent glow */}
       <div
         className={`absolute inset-0 bg-radial from-[#D7FF00]/10 via-transparent to-transparent pointer-events-none transition-opacity duration-700 ${
-          hovered ? 'opacity-100' : 'opacity-40'
+          hovered ? 'opacity-100' : 'opacity-35'
         }`}
       />
 
@@ -51,13 +52,13 @@ export const StatementSection: React.FC = () => {
             transform: `translate3d(${mouseOffset.x * 0.4}px, 0, 0)`,
           }}
         >
-          <div className="py-0.5">
+          <div className="py-0.5 overflow-hidden">
             <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-[#F4F1E9] leading-[0.9] hover:text-[#D7FF00] transition-colors duration-300 block">
               LESS NOISE.
             </h2>
           </div>
 
-          <div className="py-0.5">
+          <div className="py-0.5 overflow-hidden">
             <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[0.9] text-[#D7FF00] hover:text-[#F4F1E9] transition-colors duration-300 block">
               MORE SIGNAL.
             </h2>
@@ -87,7 +88,7 @@ export const StatementSection: React.FC = () => {
             <p>
               CallMeShazzam operates on a straightforward contract: look at the hardware that touches our lives every single day, test it with unapologetic rigor, call out anti-consumer behavior, and deliver opinions with craft, wit, and unmistakable energy.
             </p>
-            <div className="pt-2 flex items-center gap-4 text-xs font-mono text-[#F4F1E9]">
+            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#F4F1E9]">
               <span className="flex items-center gap-1.5 text-[#D7FF00]">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 100% UNBIASED
@@ -119,6 +120,9 @@ export const StatementSection: React.FC = () => {
                   src="/images/creator/shaz-banner.png"
                   alt="Official CallMeShazzam creator banner and branding"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/creator/shaz-channel-banner.jpg';
+                  }}
                 />
               </div>
               <div className="p-3 text-[11px] font-mono text-[#A5A5A0] group-hover:text-[#F4F1E9] transition-colors">

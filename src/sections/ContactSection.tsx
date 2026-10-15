@@ -38,7 +38,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-[#101010] border-t border-[#303030] relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 bg-[#101010] border-t border-[#303030] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeading
           index="06"
@@ -51,27 +51,27 @@ export const ContactSection: React.FC = () => {
           {/* Left Column: Direct Inquiries & Guidelines */}
           <div className="lg:col-span-5 space-y-8">
             <div className="p-6 sm:p-8 bg-[#171717] border border-[#303030] space-y-6">
-              <div className="text-xs font-mono uppercase tracking-[0.25em] text-[#D7FF4F]">
+              <div className="text-xs font-mono uppercase tracking-[0.25em] text-[#D7FF00]">
                 COLLABORATION PRINCIPLES
               </div>
 
               <div className="space-y-4 text-sm text-[#A5A5A0] leading-relaxed">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D7FF4F] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D7FF00] shrink-0 mt-0.5" />
                   <span>
                     <strong className="text-[#F4F1E9]">Editorial Independence:</strong> Products sent for review are tested without editorial pre-approval or scripted talking points.
                   </span>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D7FF4F] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D7FF00] shrink-0 mt-0.5" />
                   <span>
                     <strong className="text-[#F4F1E9]">Audience Value:</strong> Partnerships must bring genuine interest or technological novelty to the viewer.
                   </span>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D7FF4F] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#D7FF00] shrink-0 mt-0.5" />
                   <span>
                     <strong className="text-[#F4F1E9]">Fast Turnaround:</strong> High quality studio cinematography and testing protocols.
                   </span>
@@ -84,7 +84,7 @@ export const ContactSection: React.FC = () => {
                   href={siteConfig.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs font-mono text-[#D7FF4F] hover:underline flex items-center gap-1.5"
+                  className="text-xs font-mono text-[#D7FF00] hover:underline flex items-center gap-1.5"
                 >
                   <span>Direct message on Instagram (@callmeshazzam)</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -94,7 +94,7 @@ export const ContactSection: React.FC = () => {
 
             {/* Transparent Demo Notice */}
             <div className="p-4 bg-[#141414] border border-[#303030] flex items-start gap-3 text-xs text-[#A5A5A0] font-mono leading-relaxed">
-              <AlertCircle className="w-4 h-4 text-[#D7FF4F] shrink-0 mt-0.5" />
+              <AlertCircle className="w-4 h-4 text-[#D7FF00] shrink-0 mt-0.5" />
               <div>
                 <span className="text-[#F4F1E9] font-bold">TRANSPARENCY NOTICE:</span> Submitting this form composes a pre-formatted message and opens your operating system's mail client. No mock server claims.
               </div>
@@ -117,7 +117,7 @@ export const ContactSection: React.FC = () => {
                       onClick={() => setSelectedType(type)}
                       className={`p-3 text-xs font-mono tracking-wider uppercase text-left border transition-all cursor-pointer ${
                         selectedType === type
-                          ? 'bg-[#101010] text-[#D7FF4F] border-[#D7FF4F]'
+                          ? 'bg-[#101010] text-[#D7FF00] border-[#D7FF00]'
                           : 'bg-[#141414] text-[#A5A5A0] border-[#303030] hover:border-[#A5A5A0]'
                       }`}
                     >
@@ -141,7 +141,7 @@ export const ContactSection: React.FC = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Alex Jensen"
-                    className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF4F] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF00] focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -156,7 +156,7 @@ export const ContactSection: React.FC = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="alex@company.com"
-                    className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF4F] focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF00] focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -171,7 +171,7 @@ export const ContactSection: React.FC = () => {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="Brand / Agency / Media Company"
-                  className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF4F] focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF00] focus:outline-none transition-colors"
                 />
               </div>
 
@@ -186,7 +186,7 @@ export const ContactSection: React.FC = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Outline the hardware, target deliverables, timeline, or key objectives..."
-                  className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF4F] focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-[#101010] border border-[#303030] text-[#F4F1E9] placeholder-[#555] text-sm focus:border-[#D7FF00] focus:outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -207,7 +207,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {status === 'ready' && (
-                <div className="p-3 bg-[#101010] border border-[#D7FF4F] text-xs font-mono text-[#D7FF4F] flex items-center gap-2">
+                <div className="p-3 bg-[#101010] border border-[#D7FF00] text-xs font-mono text-[#D7FF00] flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Draft generated in mail client. Check your outgoing mailbox!</span>
                 </div>

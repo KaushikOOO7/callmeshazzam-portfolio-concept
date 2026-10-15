@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { verifiedSocialStats, SocialStat } from '../data/socialStats';
-import { ArrowUpRight, TrendingUp, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 interface CounterItemProps {
@@ -33,6 +33,7 @@ const CounterItem: React.FC<CounterItemProps> = ({
     const startTime = performance.now();
     let animationFrameId: number;
 
+    // Natural ease-out quadratic easing: slows toward the final value smoothly
     const easeOutQuad = (t: number): number => t * (2 - t);
 
     const updateCounter = (now: number) => {
@@ -51,9 +52,16 @@ const CounterItem: React.FC<CounterItemProps> = ({
       }
     };
 
-    animationFrameId = requestAnimationFrame(updateCounter);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [hasTriggered, stat.numericValue, prefersReducedMotion]);
+    // Stagger counter starts slightly by column index for a refined cinematic reveal
+    const delayTimer = setTimeout(() => {
+      animationFrameId = requestAnimationFrame(updateCounter);
+    }, index * 80);
+
+    return () => {
+      clearTimeout(delayTimer);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
+  }, [hasTriggered, stat.numericValue, prefersReducedMotion, index]);
 
   const formattedDisplay = () => {
     if (stat.decimals > 0) {
@@ -70,9 +78,9 @@ const CounterItem: React.FC<CounterItemProps> = ({
       className="group relative p-6 sm:p-8 bg-[#171717] hover:bg-[#151515] border-b sm:border-b-0 sm:border-r last:border-b-0 last:border-r-0 border-[#303030] hover:border-[#D7FF00]/80 transition-all duration-500 flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7FF00] overflow-hidden"
       aria-label={`${stat.metricLabel}: ${stat.numericValue}${stat.displaySuffix} - visit ${stat.platform} profile`}
     >
-      {/* Top Accent line reveal */}
+      {/* Top Accent line reveal: expands smoothly on settle */}
       <div
-        className={`absolute top-0 left-0 right-0 h-[2px] bg-[#D7FF00] transition-transform duration-700 origin-left ${
+        className={`absolute top-0 left-0 right-0 h-[2px] bg-[#D7FF00] transition-transform duration-700 origin-left ease-out ${
           isSettled ? 'scale-x-100' : 'scale-x-0'
         }`}
       />
@@ -88,8 +96,8 @@ const CounterItem: React.FC<CounterItemProps> = ({
 
       {/* Main Counter Display */}
       <div className="my-auto py-2">
-        <div className="flex items-baseline">
-          <span className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#F4F1E9] group-hover:text-[#D7FF00] transition-colors duration-300">
+        <div className="flex items-baseline flex-wrap">
+          <span className="font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#F4F1E9] group-hover:text-[#D7FF00] transition-colors duration-300 tabular-nums">
             {formattedDisplay()}
           </span>
           <span className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#D7FF00] ml-1">
@@ -106,9 +114,14 @@ const CounterItem: React.FC<CounterItemProps> = ({
       {/* Description & verification cue */}
       <div className="mt-6 pt-4 border-t border-[#303030]/60 text-xs text-[#A5A5A0] leading-relaxed">
         <p className="line-clamp-2">{stat.description}</p>
-        <div className="mt-2 text-[10px] font-mono text-[#777] flex items-center gap-1">
-          <CheckCircle2 className="w-3 h-3 text-[#D7FF00]" />
-          <span>VERIFIED AUDIENCE</span>
+        <div className="mt-2 text-[10px] font-mono text-[#777] flex items-center justify-between">
+          <span className="flex items-center gap-1 text-[#A5A5A0]">
+            <CheckCircle2 className="w-3 h-3 text-[#D7FF00]" />
+            <span>VERIFIED AUDIENCE</span>
+          </span>
+          <span className="text-[10px] text-[#555] group-hover:text-[#D7FF00] transition-colors">
+            PUBLIC API ↗
+          </span>
         </div>
       </div>
     </a>
@@ -129,7 +142,7 @@ export const StatsSection: React.FC = () => {
           observer.disconnect(); // Trigger strictly ONCE
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -146,7 +159,7 @@ export const StatsSection: React.FC = () => {
       aria-label="Verified creator statistics and audience reach"
       className="relative bg-[#101010] border-y border-[#303030] py-0 select-none overflow-hidden"
     >
-      {/* Top Banner Tag */}
+      {/* Top Banner Tag with Masked Headline Reveal */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono border-b border-[#303030]">
         <div className="flex items-center gap-2 text-[#D7FF00]">
           <TrendingUp className="w-4 h-4" />
@@ -155,7 +168,10 @@ export const StatsSection: React.FC = () => {
           </span>
         </div>
         <div className="flex items-center gap-3 text-[#A5A5A0]">
-          <span>VERIFIED CREATOR METRICS</span>
+          <span className="flex items-center gap-1.5">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#D7FF00]" />
+            <span>VERIFIED CREATOR METRICS</span>
+          </span>
           <span>•</span>
           <span className="text-[#F4F1E9]">CALLMESHAZZAM TECH ECOSYSTEM</span>
         </div>
@@ -179,7 +195,9 @@ export const StatsSection: React.FC = () => {
       {/* Sub-footer disclaimer strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 bg-[#141414] border-t border-[#303030] flex flex-wrap items-center justify-between text-[11px] font-mono text-[#777]">
         <span>METRICS SOURCED FROM PUBLIC CHANNELS (OCTOBER 2026)</span>
-        <span className="text-[#A5A5A0]">YOUTUBE: @CALLMESHAZZAMTECH • INSTAGRAM: @CALLMESHAZZAM</span>
+        <span className="text-[#A5A5A0]">
+          YOUTUBE: @CALLMESHAZZAMTECH • INSTAGRAM: @CALLMESHAZZAM
+        </span>
       </div>
     </section>
   );

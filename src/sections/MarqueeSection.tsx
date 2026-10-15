@@ -36,7 +36,7 @@ export const MarqueeSection: React.FC = () => {
             <span
               key={idx}
               className={`font-display font-extrabold text-xl sm:text-2xl md:text-3xl uppercase tracking-wider ${
-                word === '×' ? 'text-[#D7FF4F]' : 'text-[#F4F1E9]'
+                word === '×' ? 'text-[#D7FF00]' : 'text-[#F4F1E9]'
               }`}
             >
               {word}
@@ -57,8 +57,8 @@ export const MarqueeSection: React.FC = () => {
                   key={`${copyIndex}-${idx}`}
                   className={`font-display font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-widest transition-colors duration-300 ${
                     word === '×'
-                      ? 'text-[#D7FF4F] font-mono text-2xl sm:text-4xl'
-                      : 'text-[#F4F1E9] hover:text-[#D7FF4F]'
+                      ? 'text-[#D7FF00] font-mono text-2xl sm:text-4xl'
+                      : 'text-[#F4F1E9] hover:text-[#D7FF00]'
                   }`}
                 >
                   {word}

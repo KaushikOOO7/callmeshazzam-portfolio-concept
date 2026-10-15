@@ -199,7 +199,7 @@ export const HeroSection: React.FC = () => {
     >
       {/* Subtle Background Radial & Grid */}
       <div className="absolute inset-0 bg-noise opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D7FF4F]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#D7FF00]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
         {/* Two-Column Editorial Grid */}
@@ -208,7 +208,7 @@ export const HeroSection: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Eyebrow */}
             <div ref={eyebrowRef} className="flex items-center gap-3 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#D7FF4F] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#D7FF00] animate-pulse" />
               <span className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#A5A5A0] uppercase">
                 {siteConfig.eyebrow}
               </span>
@@ -224,7 +224,7 @@ export const HeroSection: React.FC = () => {
               <div className="overflow-hidden py-0.5">
                 <span
                   ref={line2Ref}
-                  className="block text-[#D7FF4F] will-change-transform"
+                  className="block text-[#D7FF00] will-change-transform"
                 >
                   WITHOUT
                 </span>
@@ -239,7 +239,7 @@ export const HeroSection: React.FC = () => {
             {/* Horizontal Decorative Expanding Line */}
             <div
               ref={decorLineRef}
-              className="my-8 h-[2px] bg-gradient-to-r from-[#D7FF4F] via-[#303030] to-transparent w-full max-w-lg origin-left will-change-transform"
+              className="my-8 h-[2px] bg-gradient-to-r from-[#D7FF00] via-[#303030] to-transparent w-full max-w-lg origin-left will-change-transform"
             />
 
             {/* Supporting Text */}
@@ -281,12 +281,12 @@ export const HeroSection: React.FC = () => {
               className="pt-6 border-t border-[#303030]/60 flex flex-wrap items-center gap-6 text-xs font-mono text-[#A5A5A0]"
             >
               <div className="flex items-center gap-2">
-                <Radio className="w-3.5 h-3.5 text-[#D7FF4F]" />
+                <Radio className="w-3.5 h-3.5 text-[#D7FF00]" />
                 <span className="text-[#F4F1E9] font-medium">SHAZ MOHAMED</span>
                 <span>// CALLMESHAZZAM</span>
               </div>
               <div className="hidden sm:flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#D7FF4F]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#D7FF00]" />
                 <span>INDEPENDENT PERSPECTIVES</span>
               </div>
             </div>
@@ -303,7 +303,7 @@ export const HeroSection: React.FC = () => {
               {/* Geometric Frame Elements */}
               <div
                 ref={cornerTopRef}
-                className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-[#D7FF4F] z-20 pointer-events-none"
+                className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-[#D7FF00] z-20 pointer-events-none"
               />
               <div
                 ref={cornerBottomRef}
@@ -318,10 +318,10 @@ export const HeroSection: React.FC = () => {
                 {/* Status bar atop portrait */}
                 <div className="px-4 py-2.5 bg-[#171717] border-b border-[#303030] flex items-center justify-between text-[11px] font-mono text-[#A5A5A0]">
                   <span className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#D7FF4F]" />
+                    <span className="w-2 h-2 rounded-full bg-[#D7FF00]" />
                     <span>REC // 4K 60FPS</span>
                   </span>
-                  <span className="tracking-widest text-[#D7FF4F]">RAW // 50MM</span>
+                  <span className="tracking-widest text-[#D7FF00]">RAW // 50MM</span>
                 </div>
 
                 {/* Portrait Image with Editorial Treatment */}
@@ -333,7 +333,7 @@ export const HeroSection: React.FC = () => {
                     className="w-full h-full object-cover object-top filter contrast-105 brightness-95 group-hover:scale-105 transition-all duration-700 ease-out will-change-transform"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
-                        'https://www.callmeshazzam.com/shazzam.jpg';
+                        '/images/creator/shaz-portrait-02.jpg';
                     }}
                   />
 
@@ -343,7 +343,7 @@ export const HeroSection: React.FC = () => {
                   {/* Tech Specs Overlay Badge */}
                   <div className="absolute bottom-4 left-4 right-4 p-3 bg-[#101010]/85 backdrop-blur border border-[#303030] flex items-center justify-between">
                     <div>
-                      <div className="text-[10px] font-mono text-[#D7FF4F] tracking-widest uppercase">
+                      <div className="text-[10px] font-mono text-[#D7FF00] tracking-widest uppercase">
                         CREATOR PROFILE
                       </div>
                       <div className="text-sm font-display font-bold uppercase text-[#F4F1E9]">
@@ -360,7 +360,7 @@ export const HeroSection: React.FC = () => {
                 {/* Card Bottom Meta */}
                 <div className="p-4 bg-[#141414] border-t border-[#303030] flex items-center justify-between text-xs font-mono text-[#A5A5A0]">
                   <span>CALLMESHAZZAM.COM</span>
-                  <span className="text-[#D7FF4F] flex items-center gap-1">
+                  <span className="text-[#D7FF00] flex items-center gap-1">
                     VERIFIED CREATOR
                     <Sparkles className="w-3 h-3 fill-current" />
                   </span>
@@ -378,12 +378,12 @@ export const HeroSection: React.FC = () => {
       >
         <button
           onClick={scrollToAbout}
-          className="group flex items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-[#A5A5A0] hover:text-[#D7FF4F] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D7FF4F] cursor-pointer"
+          className="group flex items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-[#A5A5A0] hover:text-[#D7FF00] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D7FF00] cursor-pointer"
           aria-label="Scroll down to About section"
         >
-          <span className="w-8 h-[1px] bg-[#303030] group-hover:bg-[#D7FF4F] transition-colors" />
+          <span className="w-8 h-[1px] bg-[#303030] group-hover:bg-[#D7FF00] transition-colors" />
           <span>SCROLL TO DISCOVER</span>
-          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#D7FF4F]" />
+          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-[#D7FF00]" />
         </button>
       </div>
     </section>

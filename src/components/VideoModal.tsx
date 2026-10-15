@@ -56,7 +56,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ item, onClose }) => {
           {/* Header with Title and Close */}
           <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#171717]/95 backdrop-blur border-b border-[#303030]">
             <div className="flex items-center gap-3">
-              <span className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-widest bg-[#D7FF4F]/10 text-[#D7FF4F] border border-[#D7FF4F]/30">
+              <span className="px-2.5 py-1 text-[11px] font-mono uppercase tracking-widest bg-[#D7FF00]/10 text-[#D7FF00] border border-[#D7FF00]/30">
                 {item.category}
               </span>
               <div className="flex items-center gap-1.5 text-xs text-[#A5A5A0] font-mono">
@@ -66,7 +66,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ item, onClose }) => {
             </div>
             <button
               onClick={onClose}
-              className="p-2 text-[#A5A5A0] hover:text-[#D7FF4F] hover:bg-[#101010] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D7FF4F]"
+              className="p-2 text-[#A5A5A0] hover:text-[#D7FF00] hover:bg-[#101010] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#D7FF00]"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -89,7 +89,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ item, onClose }) => {
           <div className="p-6 sm:p-8 space-y-6">
             <div>
               <div className="flex items-center gap-2 text-xs text-[#A5A5A0] font-mono mb-2">
-                <span className="text-[#D7FF4F]">CALLMESHAZZAM TECH</span>
+                <span className="text-[#D7FF00]">CALLMESHAZZAM TECH</span>
                 <span>//</span>
                 <span>OFFICIAL EPISODE</span>
               </div>
@@ -100,7 +100,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ item, onClose }) => {
                 {item.title}
               </h3>
               {item.subtitle && (
-                <p className="mt-2 text-sm sm:text-base text-[#D7FF4F] font-medium">
+                <p className="mt-2 text-sm sm:text-base text-[#D7FF00] font-medium">
                   {item.subtitle}
                 </p>
               )}
@@ -113,7 +113,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ item, onClose }) => {
             {/* Key Takeaways */}
             {item.keyTakeaways && item.keyTakeaways.length > 0 && (
               <div className="p-5 bg-[#101010] border border-[#303030]">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#D7FF4F] uppercase tracking-wider mb-3">
+                <div className="flex items-center gap-2 text-xs font-mono text-[#D7FF00] uppercase tracking-wider mb-3">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Episode Highlights & Key Points</span>
                 </div>
@@ -123,7 +123,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ item, onClose }) => {
                       key={idx}
                       className="flex items-start gap-2.5 text-xs sm:text-sm text-[#F4F1E9]"
                     >
-                      <span className="text-[#D7FF4F] font-mono font-bold mt-0.5">
+                      <span className="text-[#D7FF00] font-mono font-bold mt-0.5">
                         0{idx + 1}.
                       </span>
                       <span>{takeaway}</span>
