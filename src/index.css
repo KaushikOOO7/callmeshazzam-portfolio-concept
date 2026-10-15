@@ -44,13 +44,19 @@
 }
 
 .text-stroke {
-  -webkit-text-stroke: 1px rgba(244, 241, 233, 0.2);
-  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(244, 241, 233, 0.7);
+  color: #F4F1E9;
 }
 
-.text-stroke:hover {
-  -webkit-text-stroke: 1px #D7FF4F;
-  color: #D7FF4F;
+.text-stroke-accent {
+  -webkit-text-stroke: 1.5px #D7FF00;
+  color: #D7FF00;
+}
+
+.text-stroke:hover,
+.text-stroke-accent:hover {
+  -webkit-text-stroke: 1.5px #D7FF00;
+  color: #D7FF00;
 }
 
 /* Custom scrollbar */

@@ -39,10 +39,10 @@ export const ContentSection: React.FC = () => {
   };
 
   return (
-    <section id="content" className="py-24 sm:py-32 bg-[#101010] border-t border-[#303030] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+    <section id="content" className="pt-16 sm:pt-20 pb-8 sm:pb-10 bg-[#101010] border-t border-[#303030] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10">
         {/* Section Header with Eyebrow, Title & Controls */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8 border-b border-[#303030]/70">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-6 border-b border-[#303030]/70">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] text-[#D7FF00] uppercase mb-3">
               <span className="w-2 h-2 rounded-full bg-[#D7FF00]" />
@@ -51,16 +51,10 @@ export const ContentSection: React.FC = () => {
               <span className="text-[#A5A5A0]">TECH. OPINIONS. ENTERTAINMENT.</span>
             </div>
 
-            <div className="overflow-hidden py-1">
-              <motion.h2
-                initial={prefersReducedMotion ? false : { y: '105%', opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold font-display uppercase tracking-tight text-[#F4F1E9] leading-tight"
-              >
+            <div className="py-1">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-display uppercase tracking-tight text-[#F4F1E9] leading-tight">
                 THE LATEST EPISODES
-              </motion.h2>
+              </h2>
             </div>
             <p className="mt-2 text-sm sm:text-base text-[#A5A5A0] font-normal">
               Weekly smartphone teardowns, camera comparisons, and unfiltered tech commentary.
@@ -237,8 +231,8 @@ export const ContentSection: React.FC = () => {
       </div>
 
       {/* Channel Video Direct Link Action */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="pt-8 border-t border-[#303030] flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-10">
+        <div className="pt-6 border-t border-[#303030] flex flex-col sm:flex-row items-center justify-between gap-5">
           <div className="flex items-center gap-3 text-xs font-mono text-[#A5A5A0]">
             <Youtube className="w-4 h-4 text-[#D7FF00]" />
             <span>2,000+ TECH REVIEWS & BREAKDOWNS ON @CALLMESHAZZAMTECH</span>

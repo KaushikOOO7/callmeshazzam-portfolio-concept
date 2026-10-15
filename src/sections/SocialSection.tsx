@@ -9,7 +9,7 @@ export const SocialSection: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="socials" className="py-24 sm:py-32 bg-[#171717] border-t border-[#303030]">
+    <section id="socials" className="py-14 sm:py-20 bg-[#171717] border-t border-[#303030]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           index="05"
@@ -21,20 +21,12 @@ export const SocialSection: React.FC = () => {
         {/* Clean Typographic Social Directory */}
         <div className="divide-y divide-[#303030] border-y border-[#303030]">
           {socialLinks.map((item, index) => (
-            <motion.a
+            <a
               key={item.name}
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-                ease: 'easeOut',
-              }}
-              className="group py-8 sm:py-10 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-300 hover:bg-[#121212]/60 px-3 sm:px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7FF4F] relative"
+              className="group py-6 sm:py-8 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all duration-300 hover:bg-[#121212]/60 px-3 sm:px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D7FF4F] relative"
               aria-label={`${item.name} profile (${item.handle}) - opens in new window`}
             >
               {/* Left Column: Index & Name */}

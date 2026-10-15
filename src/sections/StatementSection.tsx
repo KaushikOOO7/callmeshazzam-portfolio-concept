@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
+import { Sparkles, Terminal, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { siteConfig } from '../data/siteConfig';
 
 export const StatementSection: React.FC = () => {
   const [hovered, setHovered] = useState(false);
@@ -10,7 +11,7 @@ export const StatementSection: React.FC = () => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (prefersReducedMotion || window.innerWidth < 768) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20; // +-10px drift
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
     setMouseOffset({ x });
   };
 
@@ -24,92 +25,108 @@ export const StatementSection: React.FC = () => {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="py-28 sm:py-40 bg-[#101010] border-t border-[#303030] relative overflow-hidden select-none"
+      className="py-14 sm:py-20 bg-[#101010] border-t border-[#303030] relative overflow-hidden select-none"
     >
       {/* Background radial accent glow */}
       <div
-        className={`absolute inset-0 bg-radial from-[#D7FF4F]/10 via-transparent to-transparent pointer-events-none transition-opacity duration-700 ${
+        className={`absolute inset-0 bg-radial from-[#D7FF00]/10 via-transparent to-transparent pointer-events-none transition-opacity duration-700 ${
           hovered ? 'opacity-100' : 'opacity-40'
         }`}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Micro Eyebrow */}
-        <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center justify-between border-b border-[#303030] pb-4 mb-10 text-xs font-mono text-[#A5A5A0]"
-        >
+        <div className="flex items-center justify-between border-b border-[#303030] pb-3 mb-6 text-xs font-mono text-[#A5A5A0]">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#D7FF4F]" />
-            <span>EDITORIAL MANIFESTO // 04</span>
+            <span className="w-2 h-2 rounded-full bg-[#D7FF00] animate-pulse" />
+            <span className="tracking-widest uppercase">EDITORIAL MANIFESTO // 04</span>
           </div>
-          <span className="text-[#D7FF4F]">PHILOSOPHY</span>
-        </motion.div>
+          <span className="text-[#D7FF00] font-bold tracking-wider">CREATOR PHILOSOPHY</span>
+        </div>
 
-        {/* Oversized Signature Typography with Masked Scroll Reveal & Drift */}
-        <div className="space-y-2 sm:space-y-4 text-center sm:text-left py-4">
-          <div className="overflow-hidden py-1">
-            <motion.h2
-              initial={prefersReducedMotion ? false : { y: '105%', opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                transform: `translateX(${mouseOffset.x * 0.6}px)`,
-                transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-              }}
-              className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-[#F4F1E9] leading-[0.88] hover:text-[#D7FF4F] transition-colors duration-300"
-            >
+        {/* Oversized Signature Typography with Guaranteed Immediate Visibility */}
+        <div
+          className="space-y-1 sm:space-y-2 text-center sm:text-left py-2 transition-transform duration-300 ease-out"
+          style={{
+            transform: `translate3d(${mouseOffset.x * 0.4}px, 0, 0)`,
+          }}
+        >
+          <div className="py-0.5">
+            <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-[#F4F1E9] leading-[0.9] hover:text-[#D7FF00] transition-colors duration-300 block">
               LESS NOISE.
-            </motion.h2>
+            </h2>
           </div>
 
-          <div className="overflow-hidden py-1">
-            <motion.h2
-              initial={prefersReducedMotion ? false : { y: '105%', opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.85, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                transform: `translateX(${-mouseOffset.x * 0.6}px)`,
-                transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-              }}
-              className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-transparent leading-[0.88] text-stroke hover:text-[#F4F1E9] transition-all duration-300"
-            >
+          <div className="py-0.5">
+            <h2 className="font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter leading-[0.9] text-[#D7FF00] hover:text-[#F4F1E9] transition-colors duration-300 block">
               MORE SIGNAL.
-            </motion.h2>
+            </h2>
           </div>
         </div>
 
-        {/* Editorial Body Split */}
-        <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-          className="mt-14 pt-10 border-t border-[#303030] grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
-        >
-          <div className="md:col-span-4">
-            <span className="text-xs font-mono tracking-[0.25em] text-[#D7FF4F] uppercase block mb-2">
+        {/* Editorial Body Split with Authentic Creator Banner Card */}
+        <div className="mt-8 pt-8 border-t border-[#303030] grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Why It Matters & Core Thesis */}
+          <div className="lg:col-span-4 space-y-3">
+            <span className="text-xs font-mono tracking-[0.25em] text-[#D7FF00] uppercase block font-bold">
               WHY IT MATTERS
             </span>
-            <div className="text-lg font-display font-bold uppercase text-[#F4F1E9]">
+            <div className="text-xl sm:text-2xl font-display font-bold uppercase text-[#F4F1E9] leading-snug">
               THE INFLUENCER ECHO CHAMBER HAS FAILED AUDIENCES.
+            </div>
+            <p className="text-sm font-mono text-[#A5A5A0] pt-1">
+              Independent evaluations without scripted embargo reactions or sponsor scripts.
+            </p>
+          </div>
+
+          {/* Center Column: Detailed Editorial Narrative */}
+          <div className="lg:col-span-5 space-y-4 text-base sm:text-lg text-[#A5A5A0] leading-relaxed">
+            <p>
+              We live in a tech ecosystem flooded with recycled press releases, staged unboxings, and creators hesitant to lose review units. The result? Every review sounds identical.
+            </p>
+            <p>
+              CallMeShazzam operates on a straightforward contract: look at the hardware that touches our lives every single day, test it with unapologetic rigor, call out anti-consumer behavior, and deliver opinions with craft, wit, and unmistakable energy.
+            </p>
+            <div className="pt-2 flex items-center gap-4 text-xs font-mono text-[#F4F1E9]">
+              <span className="flex items-center gap-1.5 text-[#D7FF00]">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                100% UNBIASED
+              </span>
+              <span>•</span>
+              <span>KOCHI / UAE BASED</span>
+              <span>•</span>
+              <span className="text-[#A5A5A0]">2.5M+ SUBSCRIBERS</span>
             </div>
           </div>
 
-          <div className="md:col-span-8 space-y-4 text-base sm:text-lg text-[#A5A5A0] leading-relaxed">
-            <p>
-              We live in a world flooded with recycled press releases, staged unboxings, and influencers scared to lose review units. The result? Everyone sounds identical.
-            </p>
-            <p>
-              CallMeShazzam was built on a different contract: look at the hardware that touches our lives every single day, test it with unapologetic rigor, call out anti-consumer behavior, and deliver opinions with craft, wit, and unmistakable energy.
-            </p>
+          {/* Right Column: Authentic CallMeShazzam Hub Banner Visual */}
+          <div className="lg:col-span-3">
+            <a
+              href={siteConfig.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block group relative bg-[#171717] border border-[#303030] hover:border-[#D7FF00] overflow-hidden transition-all duration-300 shadow-xl"
+            >
+              <div className="p-2.5 bg-[#141414] border-b border-[#303030] flex items-center justify-between text-[10px] font-mono text-[#A5A5A0]">
+                <span>OFFICIAL HUB</span>
+                <span className="text-[#D7FF00] flex items-center gap-1">
+                  CALLMESHAZZAM.COM
+                  <ArrowUpRight className="w-3 h-3" />
+                </span>
+              </div>
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#101010]">
+                <img
+                  src="/images/creator/shaz-banner.png"
+                  alt="Official CallMeShazzam creator banner and branding"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                />
+              </div>
+              <div className="p-3 text-[11px] font-mono text-[#A5A5A0] group-hover:text-[#F4F1E9] transition-colors">
+                TEA × TECH × SARCASM • OFFICIAL PLATFORM
+              </div>
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

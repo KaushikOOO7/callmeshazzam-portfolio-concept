@@ -13,12 +13,12 @@ export const FeaturedVideoSection: React.FC = () => {
   const featuredItem = contentItems.find((item) => item.isFeatured) || contentItems[0];
 
   return (
-    <section id="featured" className="py-24 sm:py-32 bg-[#141414] border-t border-[#303030] relative overflow-hidden">
+    <section id="featured" className="py-16 sm:py-20 bg-[#141414] border-t border-[#303030] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] text-[#D7FF4F] uppercase mb-3">
+            <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] text-[#D7FF4F] uppercase mb-2.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>FEATURED SPOTLIGHT // 03</span>
             </div>
@@ -27,19 +27,13 @@ export const FeaturedVideoSection: React.FC = () => {
             </h2>
           </div>
 
-          <div className="mt-4 sm:mt-0 text-xs font-mono text-[#A5A5A0]">
+          <div className="mt-3 sm:mt-0 text-xs font-mono text-[#A5A5A0]">
             CURATED HIGHLIGHT • UNFILTERED VERDICT
           </div>
         </div>
 
-        {/* Cinematic Wide Showcase Frame with Scroll Entrance */}
-        <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="relative bg-[#171717] border border-[#303030] hover:border-[#D7FF4F]/80 transition-colors duration-500 overflow-hidden group shadow-2xl"
-        >
+        {/* Cinematic Wide Showcase Frame with Guaranteed Immediate Visibility */}
+        <div className="relative bg-[#171717] border border-[#303030] hover:border-[#D7FF4F]/80 transition-colors duration-500 overflow-hidden group shadow-2xl">
           {/* Top Metadata Strip */}
           <div className="px-6 py-3 bg-[#101010] border-b border-[#303030] flex flex-wrap items-center justify-between text-xs font-mono text-[#A5A5A0]">
             <div className="flex items-center gap-4">
@@ -158,7 +152,7 @@ export const FeaturedVideoSection: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Modal Preview with Official YouTube Embed */}
         <VideoModal item={modalOpen ? featuredItem : null} onClose={() => setModalOpen(false)} />
